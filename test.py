@@ -5,7 +5,7 @@ import cvzone
 
 # Load YOLOv8 model
 model = YOLO('yolo12n.pt')
-
+names=model.names
 # Define vertical line's X position
 line_x = 278
 
@@ -44,7 +44,8 @@ while True:
 
     if results[0].boxes.id is not None:
         ids = results[0].boxes.id.cpu().numpy().astype(int)
-        boxes = results[0].boxes.xyxy.cpu().numpy()
+        boxes = results[0].boxes.xyxy.cpu().numpy().astypr(int)
+        class_ids = results[0].boxes.cls.int().cpu().tolist() 
 
        
 
