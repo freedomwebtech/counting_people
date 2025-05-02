@@ -44,7 +44,7 @@ while True:
 
     if results[0].boxes.id is not None:
         ids = results[0].boxes.id.cpu().numpy().astype(int)
-        boxes = results[0].boxes.xyxy.cpu().numpy().astypr(int)
+        boxes = results[0].boxes.xyxy.cpu().numpy().astype(int)
         class_ids = results[0].boxes.cls.int().cpu().tolist() 
 
        
